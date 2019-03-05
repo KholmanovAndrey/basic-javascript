@@ -14,6 +14,6 @@ if (a >= 0 && b > 0) {
     console.log(`Разность между a и b = ${a - b}`);
 } else if (a < 0 && b < 0) {
     console.log(`Произведение a и b = ${a * b}`);
-} else if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
+} else {
     console.log(`Сумма a и b = ${a + b}`);
 }

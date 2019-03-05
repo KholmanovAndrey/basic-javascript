@@ -14,13 +14,13 @@
 
 const cash = parseInt(prompt('Введите сумму в рублях, которую вы хотите положить в банк (только целое значение)'));
 
-if (cash === 101)
+if (cash === 101) {
     alert(`Ваша сумма в ${cash} рубль успешно зачислена.`);
-else if (cash === 10020)
+} else if (cash === 10020) {
     alert(`Ваша сумма в ${cash} рублей успешно зачислена.`);
-else if (cash === 120104)
+} else if (cash === 120104) {
     alert(`Ваша сумма в ${cash} рубля успешно зачислена.`);
-else {
+} else {
     // получение последних 2 цифр числа для определения склонения слова
     const num = cash % 100;
     // получение значения функции
@@ -35,13 +35,14 @@ else {
  */
 function declination(num) {
 
-    if (num === 1)
+    if (num === 1) {
         return 'рубль';
-    else if (num > 1 && num < 5)
+    } else if (num > 1 && num < 5) {
         return 'рубля';
-    else if (num === 0 || num >= 5 && num < 20)
+    } else if (num === 0 || num >= 5 && num < 20) {
         return 'рублей';
-    else
+    } else {
         return declination(num % 10);
+    }
 
 }

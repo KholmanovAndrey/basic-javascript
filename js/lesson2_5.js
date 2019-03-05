@@ -47,7 +47,13 @@ function divide(a, b) {
     return a / b;
 }
 
-
+/**
+ * Функция математических операций
+ * @param {number} arg1 - 1-ое число
+ * @param {number} arg2 - 2-ое число
+ * @param {string} operation - тип математической операции
+ * @returns {number} результать вычисления математической операции
+ */
 function mathOperation(arg1, arg2, operation) {
     switch (operation) {
         case 'add':
