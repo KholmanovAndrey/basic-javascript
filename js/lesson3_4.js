@@ -6,12 +6,10 @@
 
 let i = 0;
 while (i < 100) {
-
     if (isPrimeNumber(i)) {
         console.log(i);
     }
     i++;
-
 }
 
 /**
@@ -20,7 +18,6 @@ while (i < 100) {
  * @returns {boolean} Возвращаем true если число простое, false если непростое
  */
 function isPrimeNumber (number) {
-
     if (number > 1) {
         // можно записать как j < i, но числа больше квадратного корня дадут остаток не 0. так что их можно опустить
         for (let j = 2; j <= Math.sqrt(number); j++) {
@@ -32,5 +29,4 @@ function isPrimeNumber (number) {
     } else {
         return false;
     }
-
 }

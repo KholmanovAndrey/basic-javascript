@@ -16,9 +16,9 @@
  */
 
 const arr = [
-    [2, 4, 6],
-    [1, 5, 10],
-    [7, 4, 1],
+    [-2, -444, -6],
+    [-1, -555, -10],
+    [-1, -4, -2]
 ];
 
 const index = maxAdd(arr);
@@ -40,7 +40,9 @@ function maxAdd (array) {
         for (let j = 0; j < array[i].length; j++) {
             currentAdd += array[i][j];
         }
-        if (maxAdd < currentAdd) {
+        if (i === 0) {
+            maxAdd = currentAdd;
+        } else if (maxAdd < currentAdd) {
             maxAdd = currentAdd;
             index = i;
         }

@@ -6,12 +6,13 @@
 
  */
 
-let string = "";
+let string = "x";
+console.log(string);
 
 for (let i = 0; i < 20; i++) {
     for (let j = 0; j <= i; j++) {
-        string = string + "x";
+        string = string + "xx";
     }
     console.log(string);
-    string = ""
+    string = "x";
 }
