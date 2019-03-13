@@ -102,6 +102,11 @@ const game = {
 
             let userAnswer = this.getAnswer();
 
+            if (this.userWantExit(userAnswer)) {
+                alert('До свидания');
+                return;
+            }
+
             if (this.isAnswerCorrect(userAnswer)) {
                 this.answer[0]++;
                 alert('Верно');
@@ -110,10 +115,6 @@ const game = {
                 alert('Не верно');
             }
 
-            if (this.userWantExit(userAnswer)) {
-                alert('До свидания');
-                return;
-            }
             if (!this.isGameOver()) {
                 alert(`Конец игры: Отвечено правильно на ${this.answer[0]} вопроса.`);
                 return;
@@ -159,11 +160,7 @@ const game = {
      * @returns {boolean} true если пользователь ввел корректные данные, иначе false.
      */
     validateAnswer(userAnswer) {
-        if (userAnswer === '-1' || userAnswer === 'a' || userAnswer === 'b' || userAnswer === 'c' || userAnswer === 'd') {
-            return true;
-        }
-
-        return false;
+        return userAnswer === '-1' || userAnswer === 'a' || userAnswer === 'b' || userAnswer === 'c' || userAnswer === 'd';
     },
 
     /**
@@ -172,11 +169,7 @@ const game = {
      * @returns {boolean} true, если пользователь хотел выйти, false если нет.
      */
     userWantExit(userAnswer) {
-        if (userAnswer !== '-1') {
-            return false;
-        }
-
-        return true;
+        return userAnswer === '-1';
     },
 
     /**
@@ -185,11 +178,7 @@ const game = {
      * @returns {boolean} true, если ответ пользователя верный, false если нет.
      */
     isAnswerCorrect(userAnswer) {
-        if (userAnswer !== this.questions[this.questionIndex].correctAnswerIndex) {
-            return false;
-        }
-
-        return true;
+        return userAnswer -== this.questions[this.questionIndex].correctAnswerIndex;
     },
 
     /**
@@ -197,11 +186,7 @@ const game = {
      * @returns {boolean} true, если было задано 5 вопросов, иначе false.
      */
     isGameOver() {
-        if (this.scoreCount === 5) {
-            return false;
-        }
-
-        return true;
+        return this.scoreCount !== 5;
     }
 };
 

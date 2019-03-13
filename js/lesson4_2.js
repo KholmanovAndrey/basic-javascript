@@ -117,11 +117,7 @@ const game = {
      * @returns {boolean} true если пользователь может перейти в направлении, false если нет.
      */
     canPlayerMakeStep(nextPoint) {
-        if (nextPoint.x > 9 || nextPoint.x < 0 || nextPoint.y > 9 || nextPoint.y < 0){
-            return false;
-        }
-
-        return true;
+        return nextPoint.x < this.settings.colsCount || nextPoint.x > 0 || nextPoint.y < this.settings.rowsCount || nextPoint.y > 0;
     },
 
     /**
