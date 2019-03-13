@@ -25,6 +25,8 @@ function validateName() {
 
 function renderMessage(element, messageText) {
     const parentElement = element.parentElement;
+    const invalid = parentElement.querySelector('.invalid-feedback');
+    console.log(invalid.remove());
     const messageDiv = document.createElement('div');
     messageDiv.innerHTML = messageText;
     messageDiv.classList.add('invalid-feedback');
