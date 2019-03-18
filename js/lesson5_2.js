@@ -127,7 +127,6 @@ const game = {
      * Отображает в ячейках фигуры.
      */
     renderFigures(){
-        const tdElems = this.containerElement.querySelectorAll('td');
         for (let i = 0; i < this.figures.length; i++) {
             const figure = this.figures[i];
             const figureSymbol = figure.name + figure.color;

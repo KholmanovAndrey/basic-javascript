@@ -74,9 +74,22 @@ function validateName(element) {
  */
 function validatePhone(element) {
     const value = element.value;
+    let valid = true;
+    let message = "";
+
     if (value.trim().length !== 11){
+        message = `Телефон - должно содержать 11 символов, сейчас ${value.trim().length}.\n`;
+        valid = false;
+    }
+
+    if (isNaN(+value.trim())){
+        message += `Телефон - должно содержать только цифры`;
+        valid = false;
+    }
+
+    if (!valid){
         deleteMessage(element);
-        createMessage(element, `Телефон - должно содержать 11 символов, сейчас ${value.trim().length}.`);
+        createMessage(element, message);
         return false;
     }
     deleteMessage(element);

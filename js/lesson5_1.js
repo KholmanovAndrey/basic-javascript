@@ -67,7 +67,7 @@ const game = {
         return ((col % 2 === 0 && row % 2 !== 0) ||
             (col % 2 !== 0 && row % 2 === 0)) &&
             row !== 0 && row !== this.settings.rowsCount - 1 &&
-            col !== 0 && col !== this.settings.colsCount - 1
+            col !== 0 && col !== this.settings.colsCount - 1;
     }
 };
 
